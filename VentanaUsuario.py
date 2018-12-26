@@ -103,7 +103,7 @@ class Aplicacion:
                 mb.showinfo("Información", "No existe el numero de cedula.")
 
         
-    def ActualizarUsuario(self):        
+    def ActualizarUsuario(self):       
         self.pagina3 = ttk.Frame(self.cuaderno1)
         self.cuaderno1.add(self.pagina3, text="Actualizar Usuario")
         self.labelframe1=ttk.LabelFrame(self.pagina3, text="Usuario")        
