@@ -148,5 +148,4 @@ class Aplicacion:
             mb.showinfo("Información", "No existe ese usuario")   
 
     
-
 aplicacion1=Aplicacion()
