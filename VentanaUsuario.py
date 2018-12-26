@@ -101,7 +101,6 @@ class Aplicacion:
                 self.Edad.set(respuesta[0][3])
             else:
                 mb.showinfo("Información", "No existe el numero de cedula.")
-
         
     def ActualizarUsuario(self):       
         self.pagina3 = ttk.Frame(self.cuaderno1)
