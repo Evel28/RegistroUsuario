@@ -66,7 +66,7 @@ class Aplicacion:
         self.Nombre = tk.StringVar()# se declara la variable
         self.label3=ttk.Label(self.labelframe1, text="Nombre:")
         self.label3.grid(column=0, row=1, padx=4, pady=4)
-        self.entryNombre=ttk.Entry(self.labelframe1, textvariable=self.Nombre,state="readonly")
+        self.entryNombre=ttk.Entry(self.labelframe1, textvariable=self.Nombre, state="readonly")
         self.entryNombre.grid(column=1, row=1, padx=4, pady=4)
         #
         self.Apellido = tk.StringVar()# se declara la variable
@@ -89,6 +89,8 @@ class Aplicacion:
         self.registrar.Insertar(Datos)
         mb.showinfo("Información", "Los datos fueron cargados")
 
+       
+
     def Consultar(self):
         if len(self.Cedula.get()) == 0:
             mb.showinfo("Información", "Debe introducir un numero de cedula.")
@@ -101,6 +103,7 @@ class Aplicacion:
                 self.Edad.set(respuesta[0][3])
             else:
                 mb.showinfo("Información", "No existe el numero de cedula.")
+
         
     def ActualizarUsuario(self):       
         self.pagina3 = ttk.Frame(self.cuaderno1)
@@ -129,14 +132,18 @@ class Aplicacion:
         self.Edad = tk.StringVar()# se declara la variable
         self.label5=ttk.Label(self.labelframe1, text="Edad:")        
         self.label5.grid(column=0, row=3, padx=4, pady=4)
-        self.entryEdad=ttk.Entry(self.labelframe1, textvariable=self.Edad)
+        self.entryEdad=ttk.Entry(self.labelframe1, textvariable=self.Edad, state="readonly")
         self.entryEdad.grid(column=1, row=3, padx=4, pady=4)
         
-        # self.cboPais = ttk.Combobox(self.labelframe1,state="readonly")
-        # self.cboPais.grid(column=1, row=4, padx=4, pady=4)
+        self.cboPais = ttk.Combobox(self.labelframe1)
+        self.cboPais.grid(column=1, row=5, padx=4, pady=4)
+
+
         #
         self.boton1=ttk.Button(self.labelframe1, text="Actualizar", command=self.Actualizar)
         self.boton1.grid(column=1, row=4, padx=4, pady=4)
+
+   
 
     def Actualizar(self):
         Datos = (self.Nombre.get(), self.Apellido.get(), self.Edad.get(),self.Cedula.get())
@@ -144,7 +151,9 @@ class Aplicacion:
         if cantidad==1:
             mb.showinfo("Información", "Se modificó el usuario")
         else:
-            mb.showinfo("Información", "No existe ese usuario")   
+            mb.showinfo("Información", "No existe ese usuario") 
+
+  
 
     
 aplicacion1=Aplicacion()
